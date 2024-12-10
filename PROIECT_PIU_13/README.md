@@ -1,6 +1,8 @@
 ﻿# PROIECT_PIU_13
 
  Echipa 1:
+
+ 
  Ilies Oana 
 
  
@@ -11,5 +13,6 @@
 
  
  Shirin Nurliyeva
+ 
 
  Tudor Ioan
