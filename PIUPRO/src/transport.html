@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervare Transport</title>
+    <link rel="stylesheet" href="../styles/transport.css">
+</head>
+<body>
+    <header>
+        <h1>Rezervare Transport</h1>
+    </header>
+
+    <div class="transport-container">
+        <h2>Rezervați transportul dvs.</h2>
+
+        <form id="transportForm">
+            <div class="form-group">
+                <label for="location-from">Loc de plecare:</label>
+                <select id="location-from" name="location-from">
+                    <option value="">Selectați locul...</option>
+                    <option value="Aeroport">Aeroport</option>
+                    <option value="Gara">Gara</option>
+                    <option value="Hotel">Hotel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transport-method">Metodă de transport:</label>
+                <select id="transport-method" name="transport-method">
+                    <option value="">Selectați metoda...</option>
+                    <option value="Auto">Mașină</option>
+                    <option value="Autocar">Autocar</option>
+                    <option value="Taxi">Taxi</option>
+                    <option value="Avion">Avion</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location-to">Destinație:</label>
+                <select id="location-to" name="location-to">
+                    <option value="">Selectați destinația...</option>
+                    <option value="Plaja">Plaja</option>
+                    <option value="Munți">Munți</option>
+                    <option value="Oraș">Oraș</option>
+                </select>
+            </div>
+
+            <div class="date-picker">
+                <div class="form-group">
+                    <label for="departure-date">Data plecării:</label>
+                    <input type="date" id="departure-date" name="departure-date">
+                </div>
+                <div class="form-group">
+                    <label for="return-date">Data întoarcerii:</label>
+                    <input type="date" id="return-date" name="return-date">
+                </div>
+            </div>
+
+            <button type="button" class="submit-button" onclick="reserveTransport()">Rezervă transportul</button>
+        </form>
+
+        <div class="travel-details" id="travelDetails">
+           
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Vacanța Perfectă. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="../scripts/transport.js"></script>
+</body>
+</html>

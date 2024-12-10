@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cazare - Rezervare</title>
+    <link rel="stylesheet" href="../styles/cazare.css">
+
+</head>
+<body>
+    <header>
+        <h1>Caută Cazare</h1>
+    </header>
+
+    <main class="reservation-form">
+        <form>
+            <div class="form-group">
+                <label for="cazari">Cazări disponibile</label>
+                <select id="cazari" name="cazari">
+                    <option value="">Selectează</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="pensiune">Pensiune</option>
+                    <option value="apartament">Apartament</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nr-persoane">Nr persoane</label>
+                <input type="number" id="nr-persoane" name="nr-persoane" placeholder="1">
+            </div>
+
+            <div class="form-group">
+                <label for="tip-cazare">Tip Cazare</label>
+                <select id="tip-cazare" name="tip-cazare">
+                    <option value="">Selectează</option>
+                    <option value="standard">Standard</option>
+                    <option value="lux">Lux</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="localitate">Localitate</label>
+                <input type="text" id="localitate" name="localitate" placeholder="Ex: Brașov">
+            </div>
+
+            <div class="date-picker">
+                <div class="form-group">
+                    <label for="check-in">Check-in</label>
+                    <input type="date" id="check-in" name="check-in">
+                </div>
+                <div class="form-group">
+                    <label for="check-out">Check-out</label>
+                    <input type="date" id="check-out" name="check-out">
+                </div>
+            </div>
+
+            <div class="details">
+                <p>Detalii: descriere cazare, rating</p>
+            </div>
+
+            <button type="submit" class="submit-button">Rezervă Cazare</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vacanța Perfectă. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+</html>
