@@ -1,7 +1,15 @@
 ﻿# PROIECT_PIU_13
 
  Echipa 1:
- Ilies Oana
+ Ilies Oana 
+
+ 
  Vlad Gabor
+
+ 
  Bosca Crina
+
+ 
  Shirin Nurliyeva
+
+ Tudor Ioan
