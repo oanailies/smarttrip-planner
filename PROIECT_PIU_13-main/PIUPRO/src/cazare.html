@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cazare - Rezervare</title>
+    <link rel="stylesheet" href="../styles/cazare.css">
+</head>
+<body>
+    <header>
+        <h1>Caută Cazare</h1>
+        <div class="back-button-container">
+            <a href="index.html" class="back-button">Înapoi la Pagina de Start</a>
+        </div>
+    </header>
+
+    
+    
+    <main class="reservation-form">
+        <form id="cazare-search-form">
+            <div class="form-group">
+                <label for="cazari">Cazări disponibile</label>
+                <select id="cazari" name="cazari">
+                    <option value="">Selectează</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="pensiune">Pensiune</option>
+                    <option value="apartament">Apartament</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nr-persoane">Nr persoane</label>
+                <input type="number" id="nr-persoane" name="nr-persoane" placeholder="1">
+            </div>
+
+            <div class="form-group">
+                <label for="tip-cazare">Tip Cazare</label>
+                <select id="tip-cazare" name="tip-cazare">
+                    <option value="">Selectează</option>
+                    <option value="standard">Standard</option>
+                    <option value="lux">Lux</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="localitate">Localitate</label>
+                <input type="text" id="localitate" name="localitate" placeholder="Ex: Brașov">
+            </div>
+
+            <div class="date-picker">
+                <div class="form-group">
+                    <label for="check-in">Check-in</label>
+                    <input type="date" id="check-in" name="check-in">
+                </div>
+                <div class="form-group">
+                    <label for="check-out">Check-out</label>
+                    <input type="date" id="check-out" name="check-out">
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Caută Cazare</button>
+        </form>
+
+        <div id="detalii-cazare" class="details-section" style="display: none;">
+            <h3>Detalii de Cazare:</h3>
+            <p><strong>Tip cazare:</strong> <span id="detalii-tip-cazare"></span></p>
+            <p><strong>Nr. persoane:</strong> <span id="detalii-nr-persoane"></span></p>
+            <p><strong>Localitate:</strong> <span id="detalii-localitate"></span></p>
+            <p><strong>Check-in:</strong> <span id="detalii-check-in"></span></p>
+            <p><strong>Check-out:</strong> <span id="detalii-check-out"></span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vacanța Perfectă. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        document.getElementById("cazare-search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const tipCazare = document.getElementById("tip-cazare").value;
+            const nrPersoane = document.getElementById("nr-persoane").value;
+            const localitate = document.getElementById("localitate").value;
+            const checkIn = document.getElementById("check-in").value;
+            const checkOut = document.getElementById("check-out").value;
+
+            document.getElementById("detalii-tip-cazare").textContent = tipCazare || "Nespecificat";
+            document.getElementById("detalii-nr-persoane").textContent = nrPersoane || "1";
+            document.getElementById("detalii-localitate").textContent = localitate || "Nespecificat";
+            document.getElementById("detalii-check-in").textContent = checkIn || "Nespecificat";
+            document.getElementById("detalii-check-out").textContent = checkOut || "Nespecificat";
+
+            document.getElementById("detalii-cazare").style.display = "block";
+        });
+    </script>
+</body>
+</html>

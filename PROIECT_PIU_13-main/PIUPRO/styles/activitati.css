@@ -1,0 +1,139 @@
+/* Stiluri de baza */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container h1 {
+    margin: 0;
+}
+
+.back-button {
+    color: #fff;
+    text-decoration: none;
+    background-color: #004a99;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.back-button:hover {
+    background-color: #003366;
+}
+
+/* Container pentru activitati  */
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Card pentru fiecare activitate */
+.activity-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+}
+
+.activity-card h2 {
+    color: #0066cc;
+    margin: 10px 0;
+}
+
+.activity-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.price {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Butoane */
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.favorite-button, .reserve-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.favorite-button {
+    background-color: #ffcc00;
+    color: #fff;
+}
+
+.reserve-button {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.favorite-button:hover {
+    background-color: #e6b800;
+}
+
+.reserve-button:hover {
+    background-color: #004a99;
+}
+
+footer {
+    text-align: center;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.details-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.details-section h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #0066cc;
+}
+
+.details-section p {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+}
