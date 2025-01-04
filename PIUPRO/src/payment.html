@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plată</title>
+    <link rel="stylesheet" href="../styles/payment.css">
+</head>
+<body>
+    <header>
+        <h1>Plata Activitate</h1>
+    </header>
+    <main>
+        <div class="payment-container">
+            <h2 id="activity-title">Activitate</h2>
+            <p id="activity-price">Preț: </p>
+            <form id="payment-form">
+                <label for="name">Nume:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="card-number">Număr Card:</label>
+                <input type="text" id="card-number" name="card-number" required>
+                
+                <label for="expiration-date">Dată Expirare:</label>
+                <input type="month" id="expiration-date" name="expiration-date" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                
+                <button type="submit">Plătește</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title');
+        const price = urlParams.get('price');
+
+        document.getElementById('activity-title').textContent = title;
+        document.getElementById('activity-price').textContent = `Preț: ${price}`;
+
+        // Eveniment pentru finalizarea plății
+        const paymentForm = document.getElementById('payment-form');
+        paymentForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Previne trimiterea formularului
+            window.location.href = `success.html?title=${encodeURIComponent(title)}&price=${encodeURIComponent(price)}`;
+        });
+    </script>
+</body>
+</html>

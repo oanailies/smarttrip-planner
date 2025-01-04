@@ -8,18 +8,18 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
 
-.activities-container {
+.favorites-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
 }
 
-.activity-card {
+.favorite-card {
     background: white;
     margin: 15px;
     padding: 15px;
@@ -29,48 +29,35 @@ header {
     text-align: center;
 }
 
-.activity-card img {
+.favorite-card img {
     max-width: 100%;
     border-radius: 10px;
 }
 
-.button-group {
-    margin-top: 10px;
-}
-
-.button-group button {
-    margin: 5px;
-    padding: 10px 15px;
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
     border: none;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.favorite-button {
-    background-color: #FFD700;
-    color: black;
+.delete-button:hover {
+    background-color: #ff1a1a;
 }
 
-.reserve-button {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.reserve-button:hover {
-    background-color: #45a049;
-}
-.favorites-button {
+.back-button {
     display: inline-block;
-    margin-left: 20px;
+    margin-top: 20px;
     padding: 10px 20px;
     color: white;
     background-color: #4CAF50;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 
-.favorites-button:hover {
+.back-button:hover {
     background-color: #45a049;
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite</title>
+    <link rel="stylesheet" href="../styles/favorites.css">
+</head>
+<body>
+    <header>
+        <h1>Activități Favorite</h1>
+        <a href="activitati.html" class="back-button">Înapoi la Activități</a>
+    </header>
+    <main>
+        <div id="favorites-container" class="favorites-container">
+            <!-- Activitățile favorite vor fi generate dinamic aici -->
+        </div>
+    </main>
+    <script>
+        const favoritesContainer = document.getElementById('favorites-container');
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        // Generarea activităților favorite
+        function renderFavorites() {
+            favoritesContainer.innerHTML = '';
+            favorites.forEach((activity, index) => {
+                const favoriteCard = `
+                    <div class="favorite-card">
+                        <h2>${activity.title}</h2>
+                        <img src="${activity.image}" alt="${activity.title}" class="favorite-image">
+                        <p class="description">${activity.description}</p>
+                        <p class="price">Preț: ${activity.price}</p>
+                        <button class="delete-button" onclick="removeFromFavorites(${index})">Șterge</button>
+                    </div>
+                `;
+                favoritesContainer.innerHTML += favoriteCard;
+            });
+        }
+
+        // Funcție pentru a elimina o activitate din favorite
+        function removeFromFavorites(index) {
+            favorites.splice(index, 1);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            renderFavorites();
+        }
+
+        renderFavorites();
+    </script>
+</body>
+</html>
