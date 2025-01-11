@@ -8,8 +8,36 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    height: 100px; /* Ajustați dimensiunea logo-ului */
+    cursor: pointer;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #4CAF50;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: auto; /* Asigură poziționarea corectă a butonului */
+}
+
+.back-button:hover {
+    background-color: #45a049;
 }
 
 .favorites-container {
@@ -45,19 +73,4 @@ header {
 
 .delete-button:hover {
     background-color: #ff1a1a;
-}
-
-.back-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    color: white;
-    background-color: #4CAF50;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.back-button:hover {
-    background-color: #45a049;
 }

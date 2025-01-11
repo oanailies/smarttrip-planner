@@ -12,6 +12,17 @@ header {
     text-align: center;
 }
 
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 100px;
+    cursor: pointer;
+}
+
 .payment-container {
     background: white;
     max-width: 500px;

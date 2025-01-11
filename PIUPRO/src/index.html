@@ -5,28 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de Start</title>
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="../scripts/index.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Bine ai venit la Vacanța Perfectă!</h1>
-            <a href="login.html" class="login-button">Log In</a>
-        </div>
-    </header>
-
-    <div class="animation-container">
-        <img src="../assets/animation.gif" class="gif-animation" alt="Animation">
+    <!-- Fereastra de încărcare -->
+    <div id="loading-screen">
+        <img src="../assets/loading.gif" alt="Loading...">
     </div>
-    
-    <div class="button-container">
+
+    <div class="button-bar">
+
+        <!-- Logo -->
+        <img src="../assets/logo.png" alt="Logo Vacanța Perfectă" class="logo">
+
         <a href="cazare.html" class="button">Cazare</a>
         <a href="transport.html" class="button">Transport</a>
         <a href="activitati.html" class="button">Activități</a>
-        <a href="contact.html" class="button">Contact</a>
+        <a href="login.html" class="button">Log In</a>
     </div>
+
+    <div class="text-container">
+        <h1>Vacanța Perfectă</h1>
+        <p>
+            Bine ai venit în lumea Vacanța Perfectă! Această aplicație este partenerul tău ideal pentru a transforma visurile tale de vacanță în realitate. 
+            Descoperă cele mai bune opțiuni de cazare, de la hoteluri luxoase până la pensiuni pitorești, și alege transportul care se potrivește cel mai bine planurilor tale, fie că preferi să călătorești rapid sau să te bucuri de peisaje unice.
+        </p>
+        <p>
+            Nu te opri aici! Explorează o gamă variată de activități recreative, de la aventuri montane pline de adrenalină, la relaxare pe cele mai frumoase plaje. 
+            Fiecare moment al vacanței tale poate fi personalizat după preferințele tale, iar echipa noastră de experți este mereu la dispoziție pentru a te ajuta cu orice întrebare sau recomandare.
+        </p>
+        <p>
+            Cu Vacanța Perfectă, tot ce îți rămâne de făcut este să visezi, să alegi și să te bucuri. Planificarea unei vacanțe nu a fost niciodată mai simplă, mai rapidă și mai distractivă!
+        </p>
+        
+    </div>
+
+    <div class="contact-container">
+        <!-- Butonul de contact -->
+        <button class="contact-icon" onclick="location.href='contact.html'">
+            📞
+        </button>
+        <!-- Tooltip-ul -->
+        <div class="contact-tooltip">
+            Pentru nelămuriri sau probleme, contactați-ne!
+        </div>
+    </div>
+    
 
     <footer>
         <p>&copy; 2024 Vacanța Perfectă. Toate drepturile rezervate.</p>
     </footer>
+
+    <script>
+        // Ascunde fereastra de încărcare după 3 secunde și afișează conținutul
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 1500);
+        });
+    </script>
 </body>
+
 </html>

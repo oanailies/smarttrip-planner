@@ -13,10 +13,15 @@ header {
     padding: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 100px;
+    cursor: pointer;
 }
 
 .contact-container {

@@ -9,9 +9,23 @@
 <body>
     <header>
         <div class="header-container">
-            <h1>Activități pentru Vacanța Perfectă</h1>
-            <a href="index.html" class="back-button">Înapoi la Pagina de Start</a>
-            <a href="favorites.html" class="favorites-button">Vezi Favorite</a>
+            <a href="index.html">
+                <img src="../assets/logo.png" alt="Logo Vacanța Perfectă" class="logo">
+            </a>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Caută activități..." aria-label="Search">
+            </div>
+
+            <div class="favourite-container">
+                <!-- Butonul de contact -->
+                <button class="fav-button" onclick="location.href='favorites.html'">
+                    ⭐
+                </button>
+                <!-- Tooltip-ul -->
+                <div class="fav-tooltip">
+                    Vedeti activitatile favorite!
+                </div>
+            </div>
         </div>
     </header>
 
