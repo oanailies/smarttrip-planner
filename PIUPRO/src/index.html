@@ -13,19 +13,22 @@
 >>>>>>> 0d9084d77646d572111595dca19a3df88b91c7f9
 </head>
 <body>
-    <!-- Fereastra de încărcare -->
+   
     <div id="loading-screen">
         <img src="../assets/loading.gif" alt="Loading...">
     </div>
 
     <div class="button-bar">
 
-        <!-- Logo -->
+        
         <img src="../assets/logo.png" alt="Logo Vacanța Perfectă" class="logo">
 
         <a href="cazare.html" class="button">Cazare</a>
         <a href="transport.html" class="button">Transport</a>
         <a href="activitati.html" class="button">Activități</a>
+        <a href="plata.html" class="button">Plata</a>
+        <a href="mese.html" class="button">Mese</a>
+        <a href="organizare.html" class="button">Organizare</a>
         <a href="login.html" class="button">Log In</a>
     </div>
 
@@ -46,11 +49,11 @@
     </div>
 
     <div class="contact-container">
-        <!-- Butonul de contact -->
+     
         <button class="contact-icon" onclick="location.href='contact.html'">
             📞
         </button>
-        <!-- Tooltip-ul -->
+        
         <div class="contact-tooltip">
             Pentru nelămuriri sau probleme, contactați-ne!
         </div>
@@ -62,7 +65,7 @@
     </footer>
 
     <script>
-        // Ascunde fereastra de încărcare după 3 secunde și afișează conținutul
+        
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loading-screen').style.display = 'none';

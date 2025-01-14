@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recenzii Restaurante</title>
+    <link rel="stylesheet" href="../styles/recenziimese.css">
+</head>
+<body>
+    <div class="text-container">
+        <h1>Recenzii Restaurante</h1>
+        <p>Consultați părerile clienților despre restaurantele noastre.</p>
+    </div>
+
+    <div class="reviews-container">
+        <div class="restaurant-reviews" id="breakfast-reviews">
+            <h2>Restaurant La Dimineață</h2>
+            <p><strong>Maria:</strong> Mic dejun excelent! Cafeaua a fost delicioasă. ⭐⭐⭐⭐⭐</p>
+            <p><strong>Ion:</strong> Atmosfera e relaxantă și croissantele sunt incredibile. ⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="restaurant-reviews" id="lunch-reviews">
+            <h2>Bistro Prânz Delicios</h2>
+            <p><strong>Andreea:</strong> Pastele au fost divine! Recomand cu căldură. ⭐⭐⭐⭐⭐</p>
+            <p><strong>George:</strong> Servirea a fost rapidă, iar porțiile generoase. ⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="restaurant-reviews" id="dinner-reviews">
+            <h2>Cina Elegantă</h2>
+            <p><strong>Elena:</strong> O cină perfectă pentru o seară romantică. Mâncarea franceză la superlativ! ⭐⭐⭐⭐⭐</p>
+            <p><strong>Radu:</strong> Prețuri puțin mari, dar calitatea justifică. ⭐⭐⭐⭐</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Vacanța Perfectă. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const restaurantId = urlParams.get('restaurant');
+
+        const reviews = document.querySelectorAll('.restaurant-reviews');
+        reviews.forEach(review => {
+            review.style.display = 'none';
+        });
+
+        if (restaurantId) {
+            const selectedReviews = document.getElementById(restaurantId);
+            if (selectedReviews) {
+                selectedReviews.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

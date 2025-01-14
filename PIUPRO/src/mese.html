@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opțiuni de Mese</title>
+    <link rel="stylesheet" href="../styles/mese.css">
+</head>
+<body>
+    <div class="text-container">
+        <h1>Explorați Opțiuni de Mese</h1>
+        <p>Găsiți restaurante locale, verificați recenzii și planificați mese în timpul călătoriei.</p>
+    </div>
+
+    <div class="dining-options-container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Căutați restaurante..." class="search-input">
+            <select id="meal-type-filter" class="meal-type-filter">
+                <option value="all">Toate tipurile de mese</option>
+                <option value="breakfast">Mic dejun</option>
+                <option value="lunch">Prânz</option>
+                <option value="dinner">Cină</option>
+            </select>
+            <button onclick="filterRestaurants()">Caută</button>
+        </div>
+
+        <div id="restaurant-list" class="restaurant-list">
+            <div class="restaurant-card" data-category="breakfast">
+                <h2>Restaurant La Dimineață</h2>
+                <p>Bucătărie: Românească</p>
+                <p>Tip: Mic dejun</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('breakfast-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="lunch">
+                <h2>Bistro Prânz Delicios</h2>
+                <p>Bucătărie: Italiană</p>
+                <p>Tip: Prânz</p>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('lunch-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="dinner">
+                <h2>Cina Elegantă</h2>
+                <p>Bucătărie: Franceză</p>
+                <p>Tip: Cină</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('dinner-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="breakfast">
+                <h2>Cafea & Croissant</h2>
+                <p>Bucătărie: Franceză</p>
+                <p>Tip: Mic dejun</p>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('cafe-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="lunch">
+                <h2>Prânz Urban</h2>
+                <p>Bucătărie: Internațională</p>
+                <p>Tip: Prânz</p>
+                <p>Rating: ⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('urban-lunch-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="dinner">
+                <h2>Restaurantul de Noapte</h2>
+                <p>Bucătărie: Japoneză</p>
+                <p>Tip: Cină</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('night-restaurant-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="breakfast">
+                <h2>Good Morning Cafe</h2>
+                <p>Bucătărie: Americană</p>
+                <p>Tip: Mic dejun</p>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('good-morning-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="lunch">
+                <h2>Lunch Heaven</h2>
+                <p>Bucătărie: Thailandeză</p>
+                <p>Tip: Prânz</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('lunch-heaven-reviews')">Vezi Recenzii</button>
+            </div>
+            <div class="restaurant-card" data-category="dinner">
+                <h2>Steak House</h2>
+                <p>Bucătărie: Argentiniană</p>
+                <p>Tip: Cină</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <button class="review-button" onclick="goToReviews('steak-house-reviews')">Vezi Recenzii</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Vacanța Perfectă. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        function filterRestaurants() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const mealType = document.getElementById('meal-type-filter').value;
+            const restaurants = document.querySelectorAll('.restaurant-card');
+
+            restaurants.forEach(restaurant => {
+                const title = restaurant.querySelector('h2').textContent.toLowerCase();
+                const category = restaurant.getAttribute('data-category');
+                const matchesSearch = title.includes(searchInput);
+                const matchesCategory = mealType === 'all' || category === mealType;
+
+                if (matchesSearch && matchesCategory) {
+                    restaurant.style.display = 'block';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+
+        function goToReviews(restaurantId) {
+            window.location.href = `recenziimese.html?restaurant=${restaurantId}`;
+        }
+    </script>
+</body>
+</html>

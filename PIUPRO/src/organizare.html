@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urmărirea Bugetului și Itinerar</title>
+    <link rel="stylesheet" href="../styles/organizare.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Urmărirea Bugetului și Crearea Itinerariului</h1>
+
+   
+        <div class="budget-section">
+            <h2>Urmărirea Bugetului</h2>
+            <label for="total-budget">Introduceți bugetul total pentru călătorie:</label>
+            <input type="number" id="total-budget" placeholder="Ex: 5000" min="0">
+
+            <h3>Împărțiți bugetul pe categorii:</h3>
+            <label for="transport-budget">Buget pentru transport:</label>
+            <input type="number" id="transport-budget" placeholder="Ex: 1000" min="0">
+
+            <label for="accommodation-budget">Buget pentru cazare:</label>
+            <input type="number" id="accommodation-budget" placeholder="Ex: 2000" min="0">
+
+            <label for="meals-budget">Buget pentru mese:</label>
+            <input type="number" id="meals-budget" placeholder="Ex: 1000" min="0">
+
+            <label for="activities-budget">Buget pentru activități:</label>
+            <input type="number" id="activities-budget" placeholder="Ex: 1000" min="0">
+
+            <button onclick="calculateRemainingBudget()">Calculează Bugetul Rămas</button>
+
+            <div id="budget-summary" class="summary"></div>
+        </div>
+
+    
+        <div class="itinerary-section">
+            <h2>Crearea Itinerarului Zilnic</h2>
+            <label for="day">Ziua:</label>
+            <input type="text" id="day" placeholder="Ex: Ziua 1">
+
+            <label for="activity">Activitate:</label>
+            <input type="text" id="activity" placeholder="Ex: Vizită la muzeu">
+
+            <label for="time">Interval orar:</label>
+            <input type="text" id="time" placeholder="Ex: 10:00 - 12:00">
+
+            <button onclick="addToItinerary()">Adaugă în Itinerar</button>
+
+            <div id="itinerary-summary" class="summary">
+                <h3>Itinerar Zilnic:</h3>
+                <ul id="itinerary-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateRemainingBudget() {
+            const totalBudget = parseFloat(document.getElementById('total-budget').value) || 0;
+            const transportBudget = parseFloat(document.getElementById('transport-budget').value) || 0;
+            const accommodationBudget = parseFloat(document.getElementById('accommodation-budget').value) || 0;
+            const mealsBudget = parseFloat(document.getElementById('meals-budget').value) || 0;
+            const activitiesBudget = parseFloat(document.getElementById('activities-budget').value) || 0;
+
+            const totalAllocated = transportBudget + accommodationBudget + mealsBudget + activitiesBudget;
+            const remainingBudget = totalBudget - totalAllocated;
+
+            const summary = document.getElementById('budget-summary');
+            summary.innerHTML = `
+                <p>Buget total: ${totalBudget} RON</p>
+                <p>Buget alocat: ${totalAllocated} RON</p>
+                <p>Buget rămas: ${remainingBudget} RON</p>
+            `;
+        }
+
+        function addToItinerary() {
+            const day = document.getElementById('day').value;
+            const activity = document.getElementById('activity').value;
+            const time = document.getElementById('time').value;
+
+            if (day && activity && time) {
+                const itineraryList = document.getElementById('itinerary-list');
+                const listItem = document.createElement('li');
+                listItem.textContent = `${day}: ${activity} (${time})`;
+                itineraryList.appendChild(listItem);
+
+                document.getElementById('day').value = '';
+                document.getElementById('activity').value = '';
+                document.getElementById('time').value = '';
+            } else {
+                alert('Vă rugăm să completați toate câmpurile pentru a adăuga o activitate în itinerar.');
+            }
+        }
+    </script>
+</body>
+</html>
